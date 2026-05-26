@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+* {
+    @apply p-0 m-0;
+}
+
+.Navbar_omorfos {
+    @apply w-full flex h-full p-4 justify-center bg-cyan-200;
+}
+.navbarHead{
+    @apply w-max h-full flex  items-center;
+}
+.logo{
+    @apply w-20 underline decoration-sky-500 font-medium text-2xl ;
+}
+.options {
+    @apply w-full h-max flex justify-start items-center;
+}
+.img {
+    @apply w-10 ml-9 mr-2 h-full object-cover;
+}
+.searchInput{
+    @apply w-[15rem] h-[2rem] bg-white rounded-b-xs
+}
