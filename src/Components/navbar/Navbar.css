@@ -1,24 +1,101 @@
 @import "tailwindcss";
+@import "@tabler/icons-webfont/dist/tabler-icons.css";
 
 * {
-    @apply p-0 m-0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.Navbar_omorfos {
-    @apply w-full flex h-full p-4 justify-center bg-cyan-200;
+.navbar {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: sans-serif;
 }
-.navbarHead{
-    @apply w-max h-full flex  items-center;
+
+.navbar-logo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: -0.3px;
 }
-.logo{
-    @apply w-20 underline decoration-sky-500 font-medium text-2xl ;
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
 }
-.options {
-    @apply w-full h-max flex justify-start items-center;
+
+.nav-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #888;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
 }
-.img {
-    @apply w-10 ml-9 mr-2 h-full object-cover;
+
+.nav-btn:hover {
+  background: #f5f5f5;
+  color: #111;
 }
-.searchInput{
-    @apply w-[15rem] h-[2rem] bg-white rounded-b-xs
+
+.nav-btn.active {
+  color: #111;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchInput {
+  height: 34px;
+  width: 160px;
+  padding: 0 12px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #111;
+  outline: none;
+  background: #fafafa;
+  transition: border-color 0.15s;
+}
+
+.searchInput:focus {
+  border-color: #bbb;
+  background: #fff;
+}
+
+.searchInput::placeholder {
+  color: #bbb;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  flex-shrink: 0;
 }
