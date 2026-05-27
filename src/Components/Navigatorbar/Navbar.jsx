@@ -3,7 +3,7 @@ import "./Navbar.css"
 // import Group from "../../assets/group.svg"
 // import User from "../../assets/user.svg"
 // import logo from "/Tugas RPL/uas_sosmed/src/assets/logoUAS.png"
-function Navbar(){
+export default function Navbar(){
     return(
     <>
     <nav className="navbar">
@@ -24,4 +24,3 @@ function Navbar(){
     )
 }
 
-export default Navbar

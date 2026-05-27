@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.mainContent{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.postingSection{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+}
+
+.UsersSection{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 1rem;
+}
+
+.profileOpinion{
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+}
+.profileOpinion img{
+    border-radius: 10rem;
+    width: 100%;
+    height: 100%;
+}
