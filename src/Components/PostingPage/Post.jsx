@@ -1,11 +1,9 @@
 import "./Post.css"
 import profile from "../../assets/icon.png"
-import { useEffect,useContext,useRef,useState } from "react"
-
-
+import { useEffect, useState } from "react"
+import {Link} from "react-router-dom"
 export default function Main(){
-    const [btnLike,btnLiked] = useState(false)
-    const [btnFollow,btnFollowed] = useState(false)
+    const [btnDetail,btnDetailed] = useState(false)
 
 
     const [user,setUsers] = useState([])
@@ -35,7 +33,9 @@ export default function Main(){
     if(error){
         return <p>{error}</p>
     }
-},[])
+}, [loading, error])
+
+
 
     
 
@@ -63,8 +63,9 @@ export default function Main(){
                                         <p>Email: {users.email}</p>
                                         <p>Berasal: {users.address.city}</p>
                                         <div className="btnReaksi">
-                            <button onClick={()=> btnLiked(!btnLike)} style={{backgroundColor: btnLike ? "green":"red",padding:"0.5rem",border:"1px black solid",borderRadius:"4rem", marginRight:"1rem"}}>Suka</button>
-                            <button onClick={()=> btnFollowed(!btnFollow)} style={{backgroundColor: btnFollow ? "blue":"white",padding:"0.5rem",border:"1px black solid",borderRadius:"4rem"}}>Mengikuti</button>
+                            <button onClick={()=> btnDetailed(!btnDetail)} style={{backgroundColor: btnDetail ? "blue":"green",padding:"0.5rem",border:"1px black solid",borderRadius:"4rem", marginRight:"1rem"}}>
+                                <Link to="/user" style={{textDecoration:"none"}}>Lihat detail</Link> 
+                            </button>
                                         </div>
                                     </div>
                                 </div>

@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Footers{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 40rem;
+    justify-content: center;
+}
+.paraph{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 10rem;
+    background-color: gray;
+}

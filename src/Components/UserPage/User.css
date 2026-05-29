@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.userPage{
+  width: 100%;
+  min-height: 100vh;
+  padding: 24px;
+  font-family: sans-serif;
+}
+
+.userTitle{
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
