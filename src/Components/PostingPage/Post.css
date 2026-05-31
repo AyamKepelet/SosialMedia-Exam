@@ -29,7 +29,7 @@
     padding: 1rem;
 }
 
-.profileOpinion{
+.profileCari{
     display: flex;
     border: 2px solid gray;
     padding: 0.5rem;
@@ -38,7 +38,7 @@
     align-items: center;
     height: max-content;
 }
-.profileOpinion img{
+.profileCari img{
     border-radius: 10rem;
     width: 3rem;
     height: 3rem;
@@ -54,12 +54,11 @@ input{
 
 .users{
     display: flex;
-    width: 20rem;
-    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    height: max-content;
+    height: 100%;
 }
 .user{
     border: 2px black solid;
@@ -75,4 +74,12 @@ input{
 
 p{
     padding: 0.2rem;
+}
+
+.btn{
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 4rem;
+    font-weight: bold;
+    margin-right: 1rem;
 }

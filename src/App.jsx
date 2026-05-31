@@ -8,11 +8,11 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar></Navbar>
-    <Footer></Footer>
       <Routes>
         <Route path="/" element={<Post />} />
         <Route path="/user" element={<User />} />
       </Routes>
+    <Footer></Footer>
     </BrowserRouter>
   );
 }

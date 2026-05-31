@@ -6,8 +6,8 @@
 .Footers{
     display: flex;
     position: fixed;
-    width: 100%;
-    top: 40rem;
+    width: 20%;
+    top: 92%;
     justify-content: center;
 }
 .paraph{
@@ -16,6 +16,7 @@
     justify-content: center;
     width: 10rem;
     height: 3rem;
-    border-radius: 10rem;
-    background-color: gray;
+    color: black;
+    border: solid black;
+    border-radius: 1rem ;
 }

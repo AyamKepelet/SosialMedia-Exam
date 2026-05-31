@@ -4,10 +4,8 @@ import { useEffect, useState } from "react"
 import {Link} from "react-router-dom"
 export default function Main(){
     const [btnDetail,btnDetailed] = useState(false)
-
-
-    const [user,setUsers] = useState([])
-    const [loading,setLoading] = useState(true)
+    const [user,setUsers] = useState([]) // mengambil data users
+    const [loading,setLoading] = useState(true) 
     const [error,setError] = useState("")
     useEffect(()=>{
         async function penyambunganUsers() {
@@ -25,7 +23,6 @@ export default function Main(){
         setLoading(true)
     }
     }
-        
     penyambunganUsers()
     if(loading){
         <p>Sedang memuat...</p>
@@ -35,8 +32,13 @@ export default function Main(){
     }
 }, [loading, error])
 
+console.log(user.map((users)=>{
+    console.log(users.name);
+    
+}));
 
 
+// const [keyEvent,keySetEvent] = useState(false)
     
 
 
@@ -46,12 +48,12 @@ export default function Main(){
         <main className="mainContent">
             <div className="postingSection">
                 <ul className="UsersSection">
-                    {/* user opinion */}
-                    <li className="profileOpinion">
+                    {/* Cari Orang */}
+                    <li className="profileCari">
                         <img src={profile} alt="" />
-                        <input name="" id="" placeholder="Cari orangnya"></input>
+                        <input name="" id=""  placeholder="Cari orangnya"></input>
                     </li>
-                    {/* users quote */}
+                    {/* deskripsi user */}
                         <li className="users">
                         {
                             user.map((users) => (
@@ -63,7 +65,7 @@ export default function Main(){
                                         <p>Email: {users.email}</p>
                                         <p>Berasal: {users.address.city}</p>
                                         <div className="btnReaksi">
-                            <button onClick={()=> btnDetailed(!btnDetail)} style={{backgroundColor: btnDetail ? "blue":"green",padding:"0.5rem",border:"1px black solid",borderRadius:"4rem", marginRight:"1rem"}}>
+                            <button className="btn" onClick={()=> btnDetailed(!btnDetail)} style={{backgroundColor: btnDetail ? "gray":"white"}}>
                                 <Link to="/user" style={{textDecoration:"none"}}>Lihat detail</Link> 
                             </button>
                                         </div>
