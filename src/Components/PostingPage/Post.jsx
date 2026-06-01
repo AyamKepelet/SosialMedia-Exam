@@ -1,12 +1,14 @@
 import "./Post.css"
 import profile from "../../assets/icon.png"
-import { useEffect, useState } from "react"
-import {Link} from "react-router-dom"
+import { useEffect, useState, useRef } from "react"
 export default function Main(){
     const [btnDetail,btnDetailed] = useState(false)
     const [user,setUsers] = useState([]) // mengambil data users
     const [loading,setLoading] = useState(true) 
     const [error,setError] = useState("")
+
+    const inputRef = useRef("")
+    const [search,setSearch] = useState("")
     useEffect(()=>{
         async function penyambunganUsers() {
             try{
@@ -32,16 +34,13 @@ export default function Main(){
     }
 }, [loading, error])
 
-console.log(user.map((users)=>{
-    console.log(users.name);
-    
-}));
+const mencariOrang = user.filter(users => 
+    users.name.toLowerCase().includes(search.toLowerCase())
+)
 
-
-// const [keyEvent,keySetEvent] = useState(false)
-    
-
-
+function fokusinput(){
+    inputRef.current.focus()
+}
 
     return(
         <>
@@ -51,12 +50,14 @@ console.log(user.map((users)=>{
                     {/* Cari Orang */}
                     <li className="profileCari">
                         <img src={profile} alt="" />
-                        <input name="" id=""  placeholder="Cari orangnya"></input>
+                        <input ref={inputRef} value={search} onChange={(e) => {setSearch(e.target.value);
+                        }} placeholder="Cari orangnya"></input>
+                        <button onClick={fokusinput}>Search</button>
                     </li>
                     {/* deskripsi user */}
                         <li className="users">
                         {
-                            user.map((users) => (
+                            mencariOrang.map((users) => (
                                 <div key={users.id} className="user">
                                     <img src={profile} alt="" />
                                     <h3>{users.name}</h3>
@@ -66,7 +67,7 @@ console.log(user.map((users)=>{
                                         <p>Berasal: {users.address.city}</p>
                                         <div className="btnReaksi">
                             <button className="btn" onClick={()=> btnDetailed(!btnDetail)} style={{backgroundColor: btnDetail ? "gray":"white"}}>
-                                <Link to="/user" style={{textDecoration:"none"}}>Lihat detail</Link> 
+                            
                             </button>
                                         </div>
                                     </div>
