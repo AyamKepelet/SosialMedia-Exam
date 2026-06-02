@@ -1,7 +1,7 @@
 import "./Post.css"
 import profile from "../../assets/icon.png"
 import { useEffect, useState, useRef } from "react"
-import UserContext from "../context/Usercontext"
+// import UserContext from "../context/Usercontext"
 export default function Main(user,setSelectedUser){
     const [btnLiked,setBtnLiked] = useState(false)
     const [btnFollowed,setBtnFollowed] = useState(false)
@@ -57,7 +57,7 @@ function fokusinput(){
                         <button onClick={fokusinput}>Search</button>
                     </li>
                     {/* deskripsi users */}
-                        <li className="users">
+                        <li className="user">
                         {
                             mencariOrang.map((users) => (
                                 <div key={users.id} className="users">
@@ -70,10 +70,10 @@ function fokusinput(){
                                         <div className="btnReaksi">
                             <button className="btn" onClick={()=> setBtnLiked(!btnLiked)}>{btnLiked ? "👍🏿" : "👍"}</button>
                             <button className="btn" onClick={()=> setBtnFollowed(!btnFollowed)}>{btnFollowed ? "Followed" : "Follow"}</button>
+                            <button className="btnInfo" onClick={()=> setSelectedUser(user)}>Info Lanjut</button>
                                         </div>
                                     </div>
                                 </div>
-
                             ))
                         }
                         </li>
