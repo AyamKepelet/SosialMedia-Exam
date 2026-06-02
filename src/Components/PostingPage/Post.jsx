@@ -1,9 +1,11 @@
 import "./Post.css"
 import profile from "../../assets/icon.png"
 import { useEffect, useState, useRef } from "react"
-export default function Main(){
-    const [btnDetail,btnDetailed] = useState(false)
-    const [user,setUsers] = useState([]) // mengambil data users
+import UserContext from "../context/Usercontext"
+export default function Main(user,setSelectedUser){
+    const [btnLiked,setBtnLiked] = useState(false)
+    const [btnFollowed,setBtnFollowed] = useState(false)
+    const [users,setUsers] = useState([]) // mengambil data users
     const [loading,setLoading] = useState(true) 
     const [error,setError] = useState("")
 
@@ -34,7 +36,7 @@ export default function Main(){
     }
 }, [loading, error])
 
-const mencariOrang = user.filter(users => 
+const mencariOrang = users.filter(users => 
     users.name.toLowerCase().includes(search.toLowerCase())
 )
 
@@ -54,11 +56,11 @@ function fokusinput(){
                         }} placeholder="Cari orangnya"></input>
                         <button onClick={fokusinput}>Search</button>
                     </li>
-                    {/* deskripsi user */}
+                    {/* deskripsi users */}
                         <li className="users">
                         {
                             mencariOrang.map((users) => (
-                                <div key={users.id} className="user">
+                                <div key={users.id} className="users">
                                     <img src={profile} alt="" />
                                     <h3>{users.name}</h3>
                                     <div>
@@ -66,12 +68,12 @@ function fokusinput(){
                                         <p>Email: {users.email}</p>
                                         <p>Berasal: {users.address.city}</p>
                                         <div className="btnReaksi">
-                            <button className="btn" onClick={()=> btnDetailed(!btnDetail)} style={{backgroundColor: btnDetail ? "gray":"white"}}>
-                            
-                            </button>
+                            <button className="btn" onClick={()=> setBtnLiked(!btnLiked)}>{btnLiked ? "👍🏿" : "👍"}</button>
+                            <button className="btn" onClick={()=> setBtnFollowed(!btnFollowed)}>{btnFollowed ? "Followed" : "Follow"}</button>
                                         </div>
                                     </div>
                                 </div>
+
                             ))
                         }
                         </li>
