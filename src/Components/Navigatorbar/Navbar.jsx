@@ -28,11 +28,6 @@ export default function Navbar() {
           </button>
         </li>
       </ul>
-
-      <div className="navbar-right">
-        <input type="text" className="searchInput" placeholder="search..." />
-        <div className="avatar">U</div>
-      </div>
     </nav>
   );
 }
