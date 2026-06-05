@@ -1,29 +1,45 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 
-.userPage{
-  width: 100%;
-  min-height: 100vh;
-  padding: 24px;
-  font-family: sans-serif;
-}
-
-.userTitle{
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.UserParent{
+.title{
   display: flex;
+  padding:1rem;
+  margin-right: 1rem;
+}
+
+.UsersContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  justify-content: center;
-  align-items: center;
 }
-.UserChild{
+.Users{
   display: flex;
-  width: 10rem;
-  height: max-content;
+  width: 18rem;
+  margin: 1rem;
+  flex-direction: column;
+  height: 25rem;
+  align-items: center;
+  border-radius: 1rem;
+  font-size: 1rem;
+  justify-content: center;
+  box-shadow: 0rem 0rem 0.3rem 0rem rgb(170, 166, 166);
+}
+
+.username{
+  display: flex;
+  margin-top: 0.5rem;
+}
+.address{
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+.company{
+  display: flex;
+  padding-left: 1rem;
+  font-size: 0.8rem;
 }

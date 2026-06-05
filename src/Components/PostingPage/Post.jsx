@@ -1,14 +1,10 @@
 import "./Post.css"
 import profile from "../../assets/icon.png"
 import { useState, useRef } from "react"
-import UserContext from "../context/Usercontext"
-import { useContext } from "react"
 
-export default function Main() {
-    const {users,loading,error,setSelectedUser} = useContext(UserContext)
-    
-  const [btnLiked, setBtnLiked] = useState(false)
-  const [btnFollowed, setBtnFollowed] = useState(false)
+export default function Main({users,loading,error,btnFollowed,btnLiked,TombolLiked,TombolFollowed}) {
+
+
 
   const inputRef = useRef("")
   const [search, setSearch] = useState("")
@@ -51,14 +47,11 @@ export default function Main() {
                     <p>Email: {user.email}</p>
                     <p>Berasal: {user.address.city}</p>
                     <div className="btnReaksi">
-                      <button className="btn" onClick={() => setBtnLiked(!btnLiked)}>
-                        {btnLiked ? "👍🏿" : "👍"}
+                      <button className="btn" onClick={() => TombolLiked(user.id)}>
+                        {btnLiked.includes(user.id) ? "👍🏿" : "👍"}
                       </button>
-                      <button className="btn" onClick={() => setBtnFollowed(!btnFollowed)}>
-                        {btnFollowed ? "Followed" : "Follow"}
-                      </button>
-                      <button className="btnInfo" onClick={() => setSelectedUser(user)}>
-                        Info Lanjut
+                      <button className="btn" onClick={() => TombolFollowed(user.id)}>
+                        {btnFollowed.includes(user.id) ? "Followed" : "Follow"}
                       </button>
                     </div>
                   </div>
