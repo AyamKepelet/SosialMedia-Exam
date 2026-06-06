@@ -1,4 +1,4 @@
-# UPRAK Social Media omorfos
+# Social Media omorfos
 
 Projek ini merupakan web social media sederhana menggunakan React + Vite dan API dari JSONplaceholder sebagai mengakses informasi mengenai user
 
