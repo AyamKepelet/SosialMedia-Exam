@@ -60,7 +60,7 @@ function TombolFollowed(id) {
     <Usercontext.Provider value={{users,loading,error,panggilNama,btnFollowed,btnLiked,TombolLiked,TombolFollowed}}>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Post users={users} loading={loading}error={error}panggilNama={panggilNama}btnFollowed={btnFollowed}btnLiked={btnLiked}TombolLiked={TombolLiked} TombolFollowed={TombolFollowed}/>} />
+        <Route path="/" element={<Post/>} />
         <Route path="/user" element={<User />} />
       </Routes>
         {/* <UserCard/> */}

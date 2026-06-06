@@ -1,8 +1,11 @@
 import "./Post.css"
 import profile from "../../assets/icon.png"
 import { useState, useRef } from "react"
+import UserContext from "../context/Usercontext"
+import { useContext } from "react"
 
-export default function Main({users,loading,error,btnFollowed,btnLiked,TombolLiked,TombolFollowed}) {
+export default function Main() {
+  const {users,loading,error,btnFollowed,btnLiked,TombolLiked,TombolFollowed} = useContext(UserContext)
 
 
 

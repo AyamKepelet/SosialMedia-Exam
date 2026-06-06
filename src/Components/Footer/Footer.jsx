@@ -5,7 +5,7 @@ export default function Footer(){
         <>
         <div className="Footers">
             <span className="paraph">
-                <p>Made by Rapi</p>
+                <h2>2026 Copyright & Created by AkhmadrafiHaidar rahman</h2>
             </span>
         </div>
         </>
